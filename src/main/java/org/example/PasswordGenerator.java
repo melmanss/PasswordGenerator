@@ -25,10 +25,17 @@ public class PasswordGenerator {
         return password.toString();
     }
 
-    public static void main(String[] args) {
+    public static void generateMultiplePasswords(int count, int length) {
+        for (int i = 0; i < count; i++) {
+            String generatedPassword = generatePassword(length);
+            System.out.println("Згенерований пароль " + (i + 1) + ": " + generatedPassword);
+        }
+    }
 
-        int passwordLength = 12;
-        String generatedPassword = generatePassword(passwordLength);
-        System.out.println("Згенерований пароль: " + generatedPassword);
+    public static void main(String[] args) {
+        int passwordCount = 3; // Кількість паролів для генерації
+        int passwordLength = 12; // Довжина паролів
+
+        generateMultiplePasswords(passwordCount, passwordLength);
     }
 }
